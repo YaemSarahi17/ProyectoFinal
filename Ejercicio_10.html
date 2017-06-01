@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="accion">
+    <head>
+        <meta charset="utf-8">
+        <title>Colecciones de Datos</title>
+        <script src="angular.min.js"></script>
+        
+    </head>
+    <body >
+        <div ng-controller="controlador1">
+            <h1>Nombres</h1>
+            <ul>
+                <li ng-repeat="nombreIndividual in nombresSimples">
+                    {{ nombreIndividual}}
+                </li>
+            </ul>
+            <h1>Féminas</h1>
+            <ul>
+                <li ng-repeat="femina in feminas">
+                    {{ femina.nombre}} {{ femina.apellido}}
+                </li>
+            </ul>
+            
+        
+        </div>
+        <script>
+            var miAplicacion=angular.module('accion',[])
+            miAplicacion.controller('controlador1',['$scope',function($scope){
+                $scope.nombresSimples=["Aurora","Gabriela","Abraham"];
+                $scope.feminas=[
+                    {nombre:"Kazu", apellido:"Makino"},
+                    {nombre:"Victoria", apellido:"Legrand"},
+                    {nombre:"Rachel", apellido:"Goswell"}
+                ]
+            }])
+
+           
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="includes">
+    <head>
+        <meta charset="utf-8">
+        <title>Datos externos</title>
+        <style>
+            body{font-family: 'arial'}
+            header{
+                height: 80px;
+                background: #FF7733;
+                text-align: center;
+                line-height: 50px;
+                font-size: 40px;
+            }
+            ul,li{margin: 0; padding: 0}
+            h1{margin-top: 50px; }
+            li{
+                list-style-type: none;
+                background: #0000;
+                float: left;
+                height: 30px;
+                width: 25%;
+                text-align: center;
+            }
+            li a{
+                color: #ffff;
+                text-decoration: none;
+                line-height: 30px;
+            }
+        </style>
+        <script src="angular.min.js"></script>
+        <script src="angular-route.min.js"></script>
+    </head>
+    <body >
+        <div ng-include src="'plantillas/encabezado.html'"></div>
+        <div ng-include src="'plantillas/menu.html'"></div>
+        <h1>Visita el NG-Zoo</h1>
+
+        <script>
+            var miAplicacion=angular.module('includes',[])
+        </script>
+    </body>
+</html>

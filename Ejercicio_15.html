@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="css">
+    <head>
+        <meta charset="utf-8">
+        <title>Imagenes</title>
+        <script src="angular.min.js"></script>    
+    </head>
+    <body >
+        <div ng-controller="controlador1">
+            <img src="{{imagenActual}}">
+            <button ng-click="mostrarImagen('Slowdive-Souvlaki-CRECD_139-CD-FLAC-1993-SHGZ.jpg')">Imagen 1</button>
+            <button ng-click="mostrarImagen('Velvet_Underground_and_Nico.jpg')">Imagen 2</button>  
+        </div>
+        <script>
+            var miAplicacion=angular.module('css',[])
+            miAplicacion.controller('controlador1',['$scope',function($scope){
+                $scope.imagenActual='Slowdive-Souvlaki-CRECD_139-CD-FLAC-1993-SHGZ.jpg'
+                $scope.mostrarImagen=function( _imagen){
+                    $scope.imagenActual= _imagen
+                }
+            }])
+        </script>
+    </body>
+</html>

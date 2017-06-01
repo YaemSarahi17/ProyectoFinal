@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="css">
+    <head>
+        <meta charset="utf-8">
+        <title>Mensaje secreto en AngularJS</title>
+        <script src="angular.min.js"></script>
+        <style>
+            button{width: 200px; margin: 10px; padding: 3px  }
+            .alerta{
+                width: 400px;
+                height: 200px;
+                line-height: 200px;
+                text-align: center;
+                font-family: monospace;
+                color: #fff;
+                background: #000;
+                font-size: 22px;
+            }
+        </style>
+        
+    </head>
+    <body >
+        <div ng-controller="controlador1">
+            <button ng-click="mostrar()">Revelar Secreto</button>
+            <button ng-click="ocultar()">Volver al Misterio</button>
+            
+            <div class="alerta" ng-show="visibilidadMensaje">
+                Este es un mensaje secreto
+            </div>
+            
+        </div>
+        <script>
+            var miAplicacion = angular.module( 'css' , [] )
+            miAplicacion.controller ( 'controlador1' , ['$scope' , function($scope){
+                $scope.visibilidadMensaje=false
+                $scope.mostrar=function(){
+                    $scope.visibilidadMensaje=true
+                }
+                $scope.ocultar=function(){
+                    $scope.visibilidadMensaje=false
+                }
+
+                
+            }])
+        </script>
+    </body>
+</html>
